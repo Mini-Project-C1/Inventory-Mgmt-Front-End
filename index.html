@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Google fonts  -->
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&family=Vollkorn&display=swap" rel="stylesheet">
+    <!-- Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/258f31346d.js" crossorigin="anonymous"></script>
     <title>Document</title>
     <style>
         *{
@@ -121,7 +123,17 @@
         .move-up{
             display: none;
         }
-
+        #email_error{
+            display: none;
+        }
+        .name-error,.email-error,.mobile-error,.message-error,#email-contact-error,#mobile-contact-error{
+            color: #f95959;
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.6em;
+            position: absolute;
+            right: 20px;
+            display: none;
+        }
         @media only screen and (max-width: 768px){
             .section1Margin{
                 margin-top: 30%;
@@ -276,10 +288,10 @@
                 <a class="nav-link text-dark" href="#contactus">Contact Us<span></span><span></span><span></span><span></span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-dark" href="#login" data-toggle="modal">Log In<span></span><span></span><span></span><span></span></a>
+                <a class="nav-link text-dark" href="/user/login" data-toggle="modal" data-target="#login">Log In<span></span><span></span><span></span><span></span></a>
               </li>
               <li class="nav-item bg-dark signup">
-                <a class="nav-link text-white" href="">Sign Up</a>
+                <a class="nav-link text-white" href="signup.html">Sign Up</a>
               </li>
             </ul>
           </div>
@@ -301,23 +313,27 @@
                 </div>
             </div>
             <div class="row mt-5 justify-content-start">
-                <div class="col-lg-4">
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" style="height:54px; font-size:1.3em">
-                        <small id="emailHelp" class="form-text text-muted mb-4 emailSideText">We'll never share your email with anyone else.</small>
+                    <div class="col-lg-4">
+                    <form id="signup-form" onsubmit="return ValidateEmail()">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" style="height:54px; font-size:1.3em" required>
+                            <small id="emailHelp" class="form-text text-muted mb-4 emailSideText">We'll never share your email with anyone else.</small>
+                            <div class="alert alert-danger fade show mt-3" id="email_error" role="alert">
+                                <i class="fa fa-warning"></i>
+                                <strong>Invalid Email!</strong>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 center signUp">
-                    <button class="signUp-text btn" style="background: #ffcb05"> Sign Up For Free! </button>
-                </div>
-                
+                    <div class="col-lg-4 center signUp">
+                        <button class="signUp-text btn" style="background: #ffcb05" type="submit"> Sign Up For Free! </button>
+                    </div>
+                    </form>
             </div>
         </div>
         <span class="d-none d-md-block"><br>
         <br></span>
     </section>
     <!-- End of Section-1 -->
-
 
     <!-- Modal for login-->
     <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -352,8 +368,8 @@
                                     <input type="password" class="form-control" id="password" placeholder="Enter Password">
                                   </div>
                             </div>
-                            <button type="button" class="btn w-100 text-center" style="background: #ffcb05">Log in</button>
-                            <div class="text-muted text-center mt-2" style="font-size: 0.8em">Don't have an account? <a href="#signup" data-toggle="modal"> Sign Up </a></div>
+                            <button type="button" class="btn w-100 text-center sample-button" style="background: #ffcb05">Log in</button>
+                            <div class="text-muted text-center mt-2" style="font-size: 0.8em">Don't have an account? <a href="signup.html"> Sign Up </a></div>
                         </form>
                     </div>
                     <div class="tab-pane fade" id="seller" role="tabpanel" aria-labelledby="seller-tab">
@@ -376,7 +392,7 @@
                                     </div>
                               </div>
                             <button type="button" class="btn w-100 text-center" style="background: #ffcb05">Log in</button>
-                            <div class="text-muted text-center mt-2" style="font-size: 0.8em">Don't have an account? <a href="#signup" data-toggle="modal"> Sign Up </a> </div>
+                            <div class="text-muted text-center mt-2" style="font-size: 0.8em">Don't have an account? <a href="signup.html"> Sign Up </a> </div>
                         </form>
                     </div>
                 </div>
@@ -486,23 +502,29 @@
                 </div>
                 <div class="container col-md-5 col">
                     <div class="row text-dark mt-2">
-                        <div class="col contactForm">
-                            <form>
+                        <div class="col contactForm" style="position: relative;">
+                            <form class="contactform" onsubmit="return ValidateEmail1() && ValidateMobile1()">
                                 <div class="form-group">
                                     <label for="name" class="text-white">Full Name</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Enter Full Name">
+                                    <input type="text" class="form-control" id="name" placeholder="Enter Full Name" required>
+                                    <span class="name-error"></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="text-white">Email address</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                                    <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
+                                    <span class="email-error"></span>
+                                    <span id="email-contact-error">Invalid Email !</span>
                                 </div>
                                 <div class="form-group">
                                     <label for="phone" class="text-white">Mobile Number</label>
-                                    <input type="tel" class="form-control" id="phone" placeholder="Enter your number">
+                                    <input type="tel" class="form-control" id="phone" placeholder="Enter your number" required>
+                                    <span class="mobile-error"></span>
+                                    <span id="mobile-contact-error">Enter a 10 digit number</span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="message" class="text-white">Enter your message here</label>
-                                    <textarea class="form-control" id="message" placeholder="Type here..." rows="3"></textarea>
+                                    <label for="message" class="text-white mt-1">Enter your message here</label>
+                                    <textarea class="form-control" id="message" placeholder="Type here..." rows="3" required></textarea>
+                                    <span class="message-error"></span>
                                 </div>
                                 <div class="text-center mt-4">
                                     <button type="submit" class="btn w-50 contactSubmit">Send</button>
@@ -517,6 +539,7 @@
     </footer>
     <!-- End of Footer -->
     
+    
     <!-- Tippy.js cdn's for tooltips -->
     <!-- Development -->
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
@@ -525,20 +548,39 @@
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
 
+    
     <!-- Bootstrap cdn's for JavaScript and jQuery-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!-- jQuery cdn -->
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
     <script>
         //jQuery
-        
         //pre-loader
         $(window).on("load",function(){
             $("#loading").fadeOut();
         });
 
-        
+        // javascript
+        // SignUp-Form validation
+            function ValidateEmail(){
+                var email = document.getElementById("exampleInputEmail1").value.trim();
+                var regex = /^([A-Za-z0-9_\-\.])+@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                if( email!="" && regex.test(email) ){
+                    document.getElementById("email_error").style.display = "none";
+                    document.getElementById("exampleInputEmail1").style.border = "none";
+                    return true;
+                }
+                else{
+                    document.getElementById("email_error").style.display = "block";
+                    document.getElementById("exampleInputEmail1").style.border = "2px solid red";
+                    return false;
+                }
+            }
+        //jQuery
         $(document).ready(function(){
             $(window).scroll(function(){
                 // Nav-Bar change on scroll
@@ -555,12 +597,125 @@
                 },"slow");
             });
 
+            //Email on focus validation
+            $("#exampleInputEmail1").blur(function(){
+                if($("#exampleInputEmail1").val().trim()==""){
+                    $("#exampleInputEmail1").css("border","2px solid red");
+                }
+            });
+
+            var name_error=true,
+                email_error=true,
+                mobile_error=true,
+                message_error=true;
+            
+            //Contact on focus Validation
+            $("#name").blur(function(){
+                if($("#name").val().trim().length==0){
+                    $(this).css("border","2px solid red");
+                    $(".name-error").text("Please type your full name").fadeIn();
+                    name_error=true;
+                }
+                else if($(this).val().trim().length > 1 && $(this).val().length <= 6)
+                {
+                    $(this).css("border","2px solid red");
+                    $(".name-error").text("Please type atleast 6 characters").fadeIn();
+                    name_error=true;
+                }
+                else{
+                    $(this).css("border","none");
+                    $(".name-error").text("").fadeOut();
+                    name_error=false;
+                }
+            });
+
+            $("#email").blur(function(){
+                if($("#email").val().trim()==""){
+                    $(this).css("border","2px solid red");
+                    $(".email-error").text("Please enter your email").fadeIn();
+                    email_error=true;
+                }
+                else{
+                    $(this).css("border","none");
+                    $(".email-error").text("").fadeOut();
+                    email_error=false;
+                }
+            });
+
+            $("#phone").blur(function(){
+                if($("#phone").val().trim()==""){
+                    $(this).css("border","2px solid red");
+                    $(".mobile-error").text("Please enter your mobile number").fadeIn();
+                    mobile_error=true;
+                }
+                else{
+                    $(this).css("border","none");
+                    $(".mobile-error").text("").fadeOut();
+                    mobile_error=false;
+                }
+            });
+
+            $("#message").blur(function(){
+                if($("#message").val().trim()==""){
+                    $(this).css("border","2px solid red");
+                    $(".message-error").text("Please enter your message").fadeIn();
+                    message_error=true;
+                }
+                else{
+                    $(this).css("border","none");
+                    $(".message-error").text("").fadeOut();
+                    message_error=false;
+                }
+            });
+
+            // contact form validation
+            $(".contactform").submit(function(e){
+                if(name_error==true || email_error==true || mobile_error==true || message_error==true){
+                    $('#name, #email, #phone, #message').blur();
+                    e.preventDefault();
+                }
+            });
+
             // Carousel interval
             $('.carousel').carousel({
                 interval: 5000
             });
+            
         });
-        
+
+
+        // javascript
+        // Contact-Form validation
+        //Email Validation
+        function ValidateEmail1(){
+                var email = document.getElementById("email").value.trim();
+                var regex = /^([A-Za-z0-9_\-\.])+@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                if( email!="" && regex.test(email) ){
+                    document.getElementById("email-contact-error").style.display = "none";
+                    document.getElementById("email").style.border = "none";
+                    return true;
+                }
+                else{
+                    document.getElementById("email-contact-error").style.display = "block";
+                    document.getElementById("email").style.border = "2px solid red";
+                    return false;
+                }
+        }
+        //Mobile Validation
+        function ValidateMobile1(){
+            var mobile = document.getElementById("phone").value.trim();
+            var phoneno = /^\d{10}$/;
+            if(mobile!="" && phoneno.test(mobile)){
+                document.getElementById("mobile-contact-error").style.display = "none";
+                document.getElementById("phone").style.border = "none";
+                return true;
+            }
+            else{
+                document.getElementById("mobile-contact-error").style.display = "block";
+                document.getElementById("phone").style.border = "2px solid red";
+                return false;
+            }
+        }
         // tooltip for scroll to top using tippy.js
         tippy('.scrolltop', {
                 content: 'Scroll to Top',
