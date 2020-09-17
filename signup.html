@@ -303,7 +303,28 @@
         h2 {
             font-size: 50px !important;
         }
+
+        #login-text{
+            font-size: 1.5em;
         }
+        #login-btn{
+            font-size: 1.5em;
+            text-decoration: none;
+            color: #fff;
+        }
+        }
+        @media only screen and (min-width: 768px){
+        #login-text{
+            font-size: 3em;
+        }
+        #login-btn{
+            font-size: 3em;
+            text-decoration: none;
+            color: #fff;
+        }
+        }
+
+        
     </style>
 </head>
 <body>
@@ -322,8 +343,8 @@
              </div>
  
              <div class="heading">
-                <div style="font-size: 3em;">Inventory Management</div>
-                <p>Your Right Choice</p>
+                <div id="login-text">Already have an account ?</div>
+                <button class="btn btn-warning"><a href="/user/login" data-toggle="modal" data-target="#login" id="login-btn">Log in</a></button>
              </div>
           </div>
  
@@ -408,7 +429,75 @@
              <!-- End Signup Form -->
           </div>
        </div>
- 
+    </section>
+
+    <section>
+    <!-- Modal for login-->
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9999;">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#manufacturer" role="tab" aria-controls="manufacturer" aria-selected="true">Manufacturer</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#seller" role="tab" aria-controls="seller" aria-selected="false">Seller</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="manufacturer" role="tabpanel" aria-labelledby="manufacturer-tab">
+                        <h4 class="text-center mt-4">Login as a manufacturer</h4>
+                        <form>
+                            <div class="form-group mt-2">
+                              <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text"><img src="https://www.flaticon.com/svg/static/icons/svg/2919/2919600.svg" alt="Username" width="20px" height="20px"></div>
+                                </div>
+                                <input type="email" class="form-control" id="login-email" placeholder="Enter Email">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text"><img src="https://www.flaticon.com/svg/static/icons/svg/3014/3014229.svg" alt="Password" width="20px" height="20px"></div>
+                                    </div>
+                                    <input type="password" class="form-control" id="password" placeholder="Enter Password">
+                                  </div>
+                            </div>
+                            <button type="button" class="btn w-100 text-center sample-button" style="background: #ffcb05">Log in</button>
+                            <div class="text-muted text-center mt-2" style="font-size: 0.8em">Don't have an account? <a href="signup.html"> Sign Up </a></div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="seller" role="tabpanel" aria-labelledby="seller-tab">
+                        <h4 class="text-center mt-4">Login as a seller</h4>
+                        <form>
+                            <div class="form-group mt-2">
+                                <div class="input-group mb-2">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text"><img src="https://www.flaticon.com/svg/static/icons/svg/2919/2919600.svg" alt="Username" width="20px" height="20px"></div>
+                                  </div>
+                                  <input type="email" class="form-control" id="email-1" placeholder="Enter Email">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="input-group mb-2">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text"><img src="https://www.flaticon.com/svg/static/icons/svg/3014/3014229.svg" alt="Password" width="20px" height="20px"></div>
+                                      </div>
+                                      <input type="password" class="form-control" id="password-1" placeholder="Enter Password">
+                                    </div>
+                              </div>
+                            <button type="button" class="btn w-100 text-center" style="background: #ffcb05">Log in</button>
+                            <div class="text-muted text-center mt-2" style="font-size: 0.8em">Don't have an account? <a href="signup.html"> Sign Up </a> </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- End of Modal -->
     </section>
  
  </div>
