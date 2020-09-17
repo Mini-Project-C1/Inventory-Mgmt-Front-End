@@ -235,7 +235,15 @@
         color: #f95959;
         }
 
-        
+        /* pre-loader */
+        #loading{
+              position: fixed;
+              width: 100%;
+              height: 100vh;
+              background:#dee1e2 url('https://static.dribbble.com/users/46390/screenshots/1191953/loading.gif') no-repeat center center;
+              background-size:400px 300px;	
+              z-index: 99999;
+        }
 
         @media (max-width: 768px) {
         .container {
@@ -299,7 +307,9 @@
     </style>
 </head>
 <body>
-    
+<!-- pre-loader -->
+<div id="loading" class="text-center"></div>
+
 <div class="container">
     <section id="formHolder">
  
@@ -323,7 +333,7 @@
  
              <!-- Signup Form for sellers -->
              <div class="login form-peice switched">
-                <form class="login-form" action="#" method="post" onsubmit="return ValidateEmail()">
+                <form class="login-form" action="" method="post" onsubmit="return ValidateEmail()">
                    <h3 style="color:#808080">Sign up as a seller</h3>
                    <div class="form-group">
                       <label for="seller-name">Full Name</label>
@@ -361,7 +371,7 @@
              <!-- Signup Form for manufacturers -->
              <div class="signup form-peice">
                 
-                <form class="signup-form" action="#" method="post" onsubmit="return ValidateEmail1() && ValidatePassword1()">
+                <form class="signup-form" action="" method="post" onsubmit="return ValidateEmail1() && ValidatePassword1()">
                     <h3 style="color:#808080">Sign up as a manufacturer</h3>
                    <div class="form-group">
                       <label for="name">Full Name</label>
@@ -412,6 +422,12 @@
  <!-- jQuery cdn -->
  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
  <script>
+
+     //jQuery
+        //pre-loader
+        $(window).on("load",function(){
+            $("#loading").fadeOut();
+        });
      /*global $, document, window, setTimeout, navigator, console, location*/
     $(document).ready(function () {
 
