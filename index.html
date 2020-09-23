@@ -7,25 +7,57 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Google fonts  -->
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&family=Vollkorn&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet'>
+    <title>Home</title>
+    <link rel = "icon" href =  
+        "logo/logo.jpg"
+        type="image/x-icon">
     <style>
+
         *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body{
-            font-family: 'Vollkorn', serif;
+            font-family: "Vollkorn", serif;
             font-size: 1.3em;
         }
+
+        #logo{
+            position:relative;
+            left:20px;
+            width:100px;
+            height: auto;
+        }
+
+        .head1{
+            font-family:'Bangers';
+            text-align: center;
+            color:rgb(0,0,0);
+
+        }
+
+        .emphasis_p{
+            font-family: Vollkorn;
+            font-weight: bold;
+            font-size:1.2em;
+        }
+
+        h2{
+            font-size:190%;
+        }
+        
+        #privacy{
+            background: linear-gradient(to left,#dcdcdc,#ffffff);
+            padding:1% 0% 1% 0%;
+        }
+        
         .nav-addBackground{
             padding: 5px 10px;
-            background: #e2e276;
+            background:#008ecc;
             transition: all 1s;
-        }
-        /* margin for section-1 */
-        .margin{
-            margin-top: 14%;
         }
         
         .text,.signUp-text{
@@ -35,9 +67,11 @@
         .signUp-text:hover{
             transform: scale(1.1,1.1);
         }
-        #section-1{
-            background: #f9f7d9;
+
+        .section-1{
+            padding-top: 10%;
         }
+
         /* rounded borders for SignUp */
         li{
             border-radius: 0.5em;
@@ -90,7 +124,7 @@
               width: 100%;
               height: 100vh;
               background:#dee1e2 url('https://static.dribbble.com/users/46390/screenshots/1191953/loading.gif') no-repeat center center;
-              background-size:400px 300px;	
+              background-size:400px 300px;  
               z-index: 99999;
         }
 
@@ -121,6 +155,21 @@
         .move-up{
             display: none;
         }
+
+        .featuredesc1{
+            background: #ffffff;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #ffffff,#dcdcdc);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #ffffff,#dcdcdc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            padding:1%;
+        }
+            
+        .featuredesc2{
+            background: #ffffff;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left,#ffffff,#dcdcdc);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left,#ffffff,#dcdcdc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            padding:2%;
+        }
+
         #email_error{
             display: none;
         }
@@ -132,13 +181,23 @@
             right: 20px;
             display: none;
         }
+        #su{
+            text-decoration: none;
+            color:#fff;
+        }
         @media only screen and (max-width: 768px){
             .section1Margin{
-                margin-top: 30%;
+                padding-top:18%;
                 text-align: center;
             }
+            #mobileDisplay{
+                display: block;
+            }
+            .headtop{
+                font-size:300%;
+            }
             .nav_items{
-                background: #e2e276;
+                background: #008ecc;
             }
             .center{
                 text-align: center;
@@ -152,6 +211,9 @@
             }
         }
         @media only screen and (min-width: 768px){
+            #mobileDisplay{
+                display: none;
+            }
             nav ul li a{
                 --c: #ffcb05;
                 position: relative;
@@ -163,7 +225,7 @@
             }
             nav ul li a span {
                 position: absolute;
-                width: 25%;
+                width: 30%;
                 height: 100%;
                 background-color: var(--c);
                 transform: translateY(150%);
@@ -199,22 +261,8 @@
             .signup:hover{
                 transform: scale(1.1,1.1);
             }
-            #section-3{
-                background: #ECE9E6;  /* fallback for old browsers */
-                background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
-                background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            }
-            #section-2{
-                background: #ECE9E6;  /* fallback for old browsers */
-                background: -webkit-linear-gradient(to left, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
-                background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            }
         }
         @media only screen and (max-width: 992px){
-            .section1Margin{
-                margin-top: 30%;
-                text-align: center;
-            }
             .center{
                 text-align: center;
                 margin-top: 10px;
@@ -246,27 +294,27 @@
                 display: none;
             }
         }
-        #logo {
-            position:relative;
-                  left:20px;
-                  width:100px;
-                  height: auto;
-          }
+        /* #top-section{
+            width:auto;
+            height:auto;
+            background: url('https://newmibridges.michigan.gov/resource/1596886033000/ISD_Icons/landing-page/group-3.svg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        } */
     </style>
 </head>
 <body>
     <!-- pre-loader -->
     <div id="loading" class="text-center"></div>
 
-    <img class="scroll-top move-up scrolltop img-fluid" src="https://daks2k3a4ib2z.cloudfront.net/591b0c3a951d120c3f468711/593a0036cd8a6e16f1869dca_icon.svg" />
-    
-    
+    <img class="scroll-top move-up scrolltop img-fluid" src="https://daks2k3a4ib2z.cloudfront.net/591b0c3a951d120c3f468711/593a0036cd8a6e16f1869dca_icon.svg" /> 
     <!-- <img class="scroll-top move-up" src="https://img.icons8.com/cute-clipart/64/000000/up-squared.png"/> -->
     <!-- Nav-Bar -->
+    <div id="top-section">
     <header>
         <nav class="navbar navbar-expand-md navbar-light fixed-top" id="navbar">
           <!-- Brand logo-->
-          <a class="navbar-brand text-dark" href=""><img class="img-fluid rounded" id="logo" src="logo/logo.jpg" alt="logo" /></a>
+         <a class="navbar-brand text-dark" href="#"><img class="img-fluid rounded" id="logo" src="logo/logo.jpg" alt="logo" /></a>
         
           <!-- Toggler/collapsibe Button -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -277,16 +325,16 @@
           <div class="collapse navbar-collapse nav_items" id="collapsibleNavbar">
             <ul class="navbar-nav text-center ml-auto">
               <li class="nav-item">
-                <a class="nav-link text-dark" href="">Home<span></span><span></span><span></span><span></span></a>
+                <a class="nav-link Link" href="">Home<span></span><span></span><span></span><span></span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-dark" href="#section-2">About Us<span></span><span></span><span></span><span></span></a>
+                <a class="nav-link Link" href="#section-2">About Us<span></span><span></span><span></span><span></span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-dark" href="#contactus">Contact Us<span></span><span></span><span></span><span></span></a>
+                <a class="nav-link Link" href="#contactus">Contact Us<span></span><span></span><span></span><span></span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-dark" href="/user/login" data-toggle="modal" data-target="#login">Log In<span></span><span></span><span></span><span></span></a>
+                <a class="nav-link Link" href="#login" data-toggle="modal">Log In<span></span><span></span><span></span><span></span></a>
               </li>
               <li class="nav-item bg-dark signup">
                 <a class="nav-link text-white" href="signup.html">Sign Up</a>
@@ -297,40 +345,30 @@
     </header>
     <!-- End of Nav-Bar -->
     
-
+    
     <!-- Section-1 -->
-    <section id="section-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg align-self-center text-dark margin section1Margin">
-                    <span class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores quis tempore in nihil quidem debitis expedita, sint corrupti voluptates error. Vitae, recusandae pariatur aperiam vero amet inventore nisi quasi cupiditate.</span><br />
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus ipsa quasi at ea nisi illum eos accusantium, iste laudantium delectus eius sed placeat ex dolorum? Minima ducimus perspiciatis quia cupiditate.
+    <section class="section-1 section1Margin">
+        <span id="mobileDisplay"><br /></span>
+        <div class="container pt-6">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img class="img-fluid rounded" src="https://i1.wp.com/blog.visitorqueue.com/wp-content/uploads/2019/08/Untitled-2-01.png?fit=720%2C440&ssl=1" alt="Img"/>
                 </div>
-                <div class="col-lg text-dark text-center margin">
-                    <img class="img-fluid rounded" src="images/image1.jpg" alt="image" />
+                
+                <div class="col-md-6">
+                    <h1 class="display-3 head1 text-center headtop">Inventory Management Application</h1>
                 </div>
+                
             </div>
-            <div class="row mt-5 justify-content-start">
-                    <div class="col-lg-4">
-                    <form id="signup-form" onsubmit="return ValidateEmail()">
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" style="height:54px; font-size:1.3em" required>
-                            <small id="emailHelp" class="form-text text-muted mb-4 emailSideText">We'll never share your email with anyone else.</small>
-                            <div class="alert alert-danger fade show mt-3" id="email_error" role="alert">
-                                <i class="fa fa-warning"></i>
-                                <strong>Invalid Email!</strong>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 center signUp">
-                        <button class="signUp-text btn" style="background: #ffcb05" type="submit"> Sign Up For Free! </button>
-                    </div>
-                    </form>
+            <div class="row mt-5">
+                <div class="col text-center">
+                    <p class="emphasis_p">The perfect companion for manufacturers and store owners</p>
+                    <h3 class="text-center" style="margin-top: 10%;">Wondering what it is? Let's dive in!</h3>
+                </div>
             </div>
         </div>
-        <span class="d-none d-md-block"><br>
-        <br></span>
     </section>
+    </div>
     <!-- End of Section-1 -->
 
     <!-- Modal for login-->
@@ -366,7 +404,7 @@
                                     <input type="password" class="form-control" id="password" placeholder="Enter Password">
                                   </div>
                             </div>
-                            <button type="button" class="btn w-100 text-center sample-button" style="background: #ffcb05">Log in</button>
+                            <button type="button" class="btn w-100 text-center sample-button" style="background: #ffcb05"><a href="dashboard.html">Log in</a></button>
                             <div class="text-muted text-center mt-2" style="font-size: 0.8em">Don't have an account? <a href="signup.html"> Sign Up </a></div>
                         </form>
                     </div>
@@ -400,49 +438,57 @@
     </div>
     <!-- End of Modal -->
 
-
     <!-- Section-2 -->
-    <section id="section-2">
-        <br>
+    <section class="featuredesc1">
+        <br/>
+        <br/>
         <div class="container col-10">
             <div class="row">
                 <div class="col-md align-self-center heading-1">
-                    <h2>Heading 1</h2>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates possimus, temporibus delectus id perferendis cupiditate libero, ex dolorem ipsum facere quibusdam natus obcaecati! Impedit maiores cumque, excepturi tempora beatae optio!</p>
+                    <h2 class="head1">Product Information stored in a database</h2>
+                    <p class="emphasis_p">Tired of keeping track of your products?</p>
+                    <p>Worry not, with our application, you will be able to store all your product information in an extensive and easy to understand database.</p>
                 </div>
                 <div class="col-md">
-                    <img class="img-fluid" src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/308998dcb3ed5ab3d01217a4d24ffa03/hero-a.svg" alt="image">
+                    <img class="img-fluid" src="https://www.escapetech.com/eol5links/documentation/Content/Resources/Images/Finance/StoresInventory.jpg" alt="image">
                 </div>
             </div>
         </div>
+        <br/>
+        <br/>
     </section>
     <!-- End of Section-2 -->
-
-
     <!-- Section-3 -->
-    <section id="section-3">
-        <br>
+    <section class="featuredesc2">
+        <br/>
+        <br/>
         <div class="container col-10">
             <div class="row">
                 <div class="col-md order-md-2 align-self-center heading-2">
-                    <h2>Heading 2</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid placeat ratione quod nisi distinctio eveniet sint. Illum at, porro ut id excepturi, optio neque inventore voluptatem quae nulla aperiam qui?</p>
+                    <h2 class="head1">Sales Information</h2>
+                    <p class="emphasis_p">Any discrepancies? NO CHANCE!</p>
+                    <p>All your transcations will be monitored and given a date range, you will be able to view all the transactions made during that period.</p>
                 </div>
                 <div class="col-md order-md-1">
-                    <img class="img-fluid rounded" src="https://assets-global.website-files.com/5b4cba745747fc721ba46069/5b5625ee8315c53496657dd1_inventory-management-process1.jpg" alt="image">
+                    <img class="img-fluid rounded" src="https://i1.wp.com/blog.visitorqueue.com/wp-content/uploads/2019/08/Untitled-2-01.png?fit=720%2C440&ssl=1" alt="image">
                 </div>
             </div>
         </div>
-        <br>
+        <br/>
+        <br/>
     </section>
     <!-- End of Section-3 -->
 
-
     <!-- Section-4 -->
     <!-- Carousel -->
-    <section class="container col-12 col-sm-10 mt-5" id="section-4">
+    <section class="container col-10 col-sm-10" id="section-4">
+        <br/>
+        <br/>
         <div class="row">
-            <div class="col text-center"><h1>See how it works</h1></div>
+            <div class="col text-center">
+                <h2 class="head1">Sales Analysis</h2>
+                <p class="emphasis_p">Making Profit?</p>
+            </div>
         </div>
         <div class="row">
           <div class="col mx-auto text-center animatecar">
@@ -456,22 +502,22 @@
                 <div class="carousel-item active">
                   <img src="https://www.assetinfinity.com/blog/wp-content/uploads/2019/09/Inventory-management-system-objectives.png" alt="project" class="img-fluid">
                   <div class="carousel-caption d-none d-md-block">
-                    <h5>Sample Heading 1</h5>
-                    <p>This is a sample text</p>
+                    <h4>Monthly Sales Analysis</h4>
+                    <p>At the end of every month, you will be able to see how much profit you made</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img src="https://www.assetinfinity.com/blog/wp-content/uploads/2019/09/Functions-of-Inventory-Management-Software.png" alt="project" class="img-fluid">
+                  <img src= 'https://www.sageintelligence.com/wp-content/uploads/2018/05/Sales-Trend-Analysis.png' class="img-fluid" alt="sales analysis">
                   <div class="carousel-caption d-none d-md-block">
-                    <h5>Sample Heading 2</h5>
-                    <p>This is a sample text</p>
+                    <h4>Graphical Representation</h4>
+                    <p>The analysis will be displayed in the form of graphs for readability. You will be able to see how your business is doing when compared to previous months</p>
                   </div>
                 </div>
                 <div class="carousel-item">
                   <img src="https://www.mediafrontier.ch/wp-content/uploads/2016/12/mf-blog-header-social-media-1280x550.png" alt="project" class="img-fluid">
                   <div class="carousel-caption d-none d-md-block">
-                    <h5>Sample Heading 3</h5>
-                    <p>This is a sample text</p>
+                    <h4>Insights</h4>
+                    <p>Personalised insights such as which product is selling more, which product is selling us, etc will be provided.</p>
                   </div>
                 </div>
               </div>
@@ -484,54 +530,128 @@
             </div>
           </div>
         </div>
+        <br/>
+        <br/>
     </section>
     <!-- End of Carousel -->
     <!-- End of Section-4 -->
 
 
+    <section class="featuredesc1">
+        <br/>
+        <br/>
+        <div class="container col-10">
+            <div class="row">
+                <div class="col-md align-self-center heading-1">
+                    <h2 class="head1">Billing</h2>
+                    <p class="emphasis_p">Did you think this is just an inventorying application?</p>
+                    <p>You will be able to generate invoices to your customers at the time of transcations using the same application that you use for inventorying! Eliminating the need for another software.</p>
+                </div>
+                <div class="col-md">
+                    <img class="img-fluid" src="https://lh3.googleusercontent.com/proxy/ACFJlGj6ofYJFAFJWoqO-GhFTaKzbhLROh5HcAFYZOWvHEXViCbwMMk3qfL3Esmf0T_iudaikq3-d72U_soQgch29DfNLsR_lG-aJAcM4u-1">
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+    </section>
+
+    <section class="featuredesc2">
+        <br/>
+        <br/>
+        <div class="container col-10">
+            <div class="row">
+                <div class="col-md">
+                    <img class="img-fluid" src="https://www.escapetech.com/eol5links/documentation/Content/Resources/Images/Finance/StoresInventory.jpg" alt="image">
+                </div>
+                <div class="col-md align-self-center heading-1">
+                    <h2 class="head1">Order products directly from the manufacturers</h2>
+                    <p class="emphasis_p">Make note manufacturers, no more middle men!</p>
+                    <p>If you are a store owner and running low on a specific product, you will be able order that product directly from the respective manufacturers.</p>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+    </section>
+
+    <section id="privacy">
+        <br/>
+        <br/>
+        <div class = "container text-center">
+            <h2 class="head1">Privacy</h2>
+            <p class="emphasis_p">WE VALUE YOUR PRIVACY!</p>
+            <p>Privacy is the one aspect in which we never compromise on!<br/>
+               The only person that can view your information is <strong>YOU.</strong><br/>
+               We will never share any information about you or your company.
+           </p>
+        </div>
+        <br/>
+        <br/>
+    </section>
+    <div class="container">
+        <br/>
+        <br/>
+        <div class="row text-center">
+            <div class="col">
+                <h3>So......<br/> 
+                    What are you still waiting for?<br/><br/>
+                    Sign up and avail all these features today!
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col signUp text-center">
+                <button class="signUp-text btn" style="background: #008ecc;"> 
+                    <a href="signup.html" id="su"> Sign Up! </a>
+                </button>
+            </div>
+        </div>
+        <br/>
+    </div>
+
     <!-- Footer -->
     <footer id="contactus" class="contact mt-5">
-            <div class="container col-10">
-                <div class="row">
-                    <div class="col">
-                        <h2 class="text-white text-center">Contact Us</h2>
-                        <p class="text-white text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut esse architecto excepturi quae deserunt suscipit quidem perferendis, corporis dolore voluptatibus blanditiis laudantium temporibus adipisci voluptas. Vitae, magni aut. Illo, sunt.</p>
-                    </div>
+        <div class="container col-10 pt-2">
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-white text-center head1">Contact Us</h2>
+                    <p class="text-white text-center">Any Queries?<br/>Feel free to contact us!</p>
                 </div>
-                <div class="container col-md-5 col">
-                    <div class="row text-dark mt-2">
-                        <div class="col contactForm" style="position: relative;">
-                            <form class="contactform" onsubmit="return ValidateEmail1()">
-                                <div class="form-group">
-                                    <label for="name" class="text-white">Full Name</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Enter Full Name" required>
-                                    <span class="name-error"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email" class="text-white">Email address</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
-                                    <span class="email-error"></span>
-                                    <span id="email-contact-error">Invalid Email !</span>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="message" class="text-white mt-1">Enter your message here</label>
-                                    <textarea class="form-control" id="message" placeholder="Type here..." rows="3" required></textarea>
-                                    <span class="message-error"></span>
-                                </div>
-                                <div class="text-center mt-4">
-                                    <button type="submit" class="btn w-50 contactSubmit">Send</button>
-                                </div>
-                                <br>
-                            </form>
-                        </div>
+            </div>
+            <div class="container col-md-5 col">
+                <div class="row text-dark mt-2">
+                    <div class="col contactForm" style="position: relative;">
+                        <form class="contactform" onsubmit="return ValidateEmail1()">
+                            <div class="form-group">
+                                <label for="name" class="text-white">Full Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter Full Name" required>
+                                <span class="name-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="text-white">Email address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
+                                <span class="email-error"></span>
+                                <span id="email-contact-error">Invalid Email !</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="text-white mt-1">Enter your message here</label>
+                                <textarea class="form-control" id="message" placeholder="Type here..." rows="3" required></textarea>
+                                <span class="message-error"></span>
+                            </div>
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn w-50 contactSubmit">Send</button>
+                            </div>
+                            <br>
+                        </form>
                     </div>
                 </div>
             </div>
-            <br>
-    </footer>
-    <!-- End of Footer -->
-    
+        </div>
+        <br>
+</footer>
+<!-- End of Footer -->
     
     <!-- Tippy.js cdn's for tooltips -->
     <!-- Development -->
@@ -557,27 +677,20 @@
             $("#loading").fadeOut();
         });
 
-        // javascript
-        // SignUp-Form validation
-            function ValidateEmail(){
-                var email = document.getElementById("exampleInputEmail1").value.trim();
-                var regex = /^([A-Za-z0-9_\-\.])+@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-                if( email!="" && regex.test(email) ){
-                    document.getElementById("email_error").style.display = "none";
-                    document.getElementById("exampleInputEmail1").style.border = "none";
-                    return true;
-                }
-                else{
-                    document.getElementById("email_error").style.display = "block";
-                    document.getElementById("exampleInputEmail1").style.border = "2px solid red";
-                    return false;
-                }
-            }
+        
         //jQuery
         $(document).ready(function(){
+            $('.Link').css("color","#000000");
             $(window).scroll(function(){
                 // Nav-Bar change on scroll
-                $('nav').toggleClass('nav-addBackground', $(this).scrollTop() > 50);
+                if($(this).scrollTop()>50){
+                    $('nav').addClass('nav-addBackground');
+                    $('.Link').css("color","#fff");
+                }
+                else{
+                    $("nav").removeClass('nav-addBackground');
+                    $('.Link').css("color","#000000");
+                }
                 
                 // scroll-top icon toggle
                 $(".scroll-top").toggleClass("move-up",$(this).scrollTop() < 500);
@@ -588,13 +701,6 @@
                 $("html, body").animate({ 
                     scrollTop: 0 
                 },"slow");
-            });
-
-            //Email on focus validation
-            $("#exampleInputEmail1").blur(function(){
-                if($("#exampleInputEmail1").val().trim()==""){
-                    $("#exampleInputEmail1").css("border","2px solid red");
-                }
             });
 
             var name_error=true,
